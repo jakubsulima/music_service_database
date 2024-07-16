@@ -1,0 +1,9 @@
+CREATE OR REPLACE TRIGGER add_tax_before_insert
+AFTER INSERT ON subscriptions
+FOR EACH ROW
+EXECUTE FUNCTION add_tax();
+
+CREATE OR REPLACE TRIGGER add_intro_after_insert
+AFTER INSERT ON songs
+FOR EACH ROW
+EXECUTE FUNCTION add_intro();
